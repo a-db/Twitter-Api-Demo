@@ -163,12 +163,12 @@
                         } else {
                             [self.followerArray removeAllObjects];
                         }
-                        for(int i=0, j = [self.friendsList[@"users"] count] ; i<j ; i++) {
+                        for(int i=0, j = (int)[self.friendsList[@"users"] count] ; i<j ; i++) {
                             [self.followerArray addObject:[NSNull null]];
                         }
                         
                         // Created a queue off the main thread to download icons and then updated the ui on the main queue thread
-                        for (int i = 0, j = [self.friendsList[@"users"] count]; i<j; i++) {
+                        for (int i = 0, j = (int)[self.friendsList[@"users"] count]; i<j; i++) {
                         
                             dispatch_queue_t backgroundQueue = dispatch_queue_create("com.mycompany.myqueue", 0);
                             dispatch_async(backgroundQueue, ^{

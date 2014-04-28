@@ -214,7 +214,7 @@
                             } else {
                                 [self.imgArray removeAllObjects];
                             }
-                            for(int i=0, j = self.followingFeed.count ; i<j ; i++) {
+                            for(int i=0, j = (int)self.followingFeed.count ; i<j ; i++) {
                                 [self.imgArray addObject:[NSNull null]];
                             }
                             
@@ -226,7 +226,7 @@
                             self.refresh = false;
                             
                             // Created a queue off the main thread to download icons and then updated the ui on the main queue thread
-                            for (int i = 0, j = self.followingFeed.count; i<j; i++) {
+                            for (int i = 0, j = (int)self.followingFeed.count; i<j; i++) {
                                 
                                 dispatch_queue_t backgroundQueue = dispatch_queue_create("com.mycompany.myqueue", 0);
                                 dispatch_async(backgroundQueue, ^{
